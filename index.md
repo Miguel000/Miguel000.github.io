@@ -3,13 +3,14 @@ layout: default
 title: Home
 ---
 
-# 👋 Hi, I’m Miguel
+# Bio
 
-Welcome to my portfolio website.  
-Here are some of my projects:
+Miguel Hernández, Sr. Threat Research Engineer at Sysdig, is a lifelong learner passionate about innovation. Over the past decade, Miguel has honed his expertise in security research, leaving his mark at prominent tech companies and fostering a spirit of collaboration through personal open-source initiatives. Miguel has been a featured speaker at cybersecurity conferences across Europe, such as HITB, HIP, RootedCon, HackLU, and DeepSec.
 
-- [Project 1](https://github.com/Miguel000/project1)
-- [Project 2](https://github.com/Miguel000/project2)
+# Info
 
-📫 You can reach me at [your.email@example.com](mailto:your.email@example.com).
+- [Conference speaker](https://github.com/Miguel000/MySecTalks)
+- [Blog content](https://github.com/Miguel000/BlogContent)
+- [Open-source Projects](https://github.com/Miguel000/OpenSourceTools)
 
+📫 You can reach me at [miguelhernandez2907@gmail.com](mailto:miguelhernandez2907@gmail.com).
