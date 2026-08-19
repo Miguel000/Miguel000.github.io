@@ -153,7 +153,6 @@ title: Miguel Hernández
   font-size: 13px;
   line-height: 1.65;
   margin: 14px 0 0;
-  max-width: 78ch;
 }
 .mh-bio-header strong { color: #bbb; font-weight: normal; }
 .mh-oss-stars {
@@ -221,11 +220,11 @@ adversarial AI.
 </p>
 
 <div class="mh-nav">
-  <button class="mh-tab active" data-target="mh-cv">Experience</button>
-  <button class="mh-tab" data-target="mh-talks">Talks</button>
-  <button class="mh-tab" data-target="mh-blog">Blog</button>
-  <button class="mh-tab" data-target="mh-oss">Open Source</button>
-  <button class="mh-tab" data-target="mh-about">About</button>
+  <button type="button" class="mh-tab active" data-target="mh-cv">Experience</button>
+  <button type="button" class="mh-tab" data-target="mh-talks">Talks</button>
+  <button type="button" class="mh-tab" data-target="mh-blog">Blog</button>
+  <button type="button" class="mh-tab" data-target="mh-oss">Open Source</button>
+  <button type="button" class="mh-tab" data-target="mh-about">About</button>
 </div>
 
 <!-- ══════════════ EXPERIENCE ══════════════ -->
@@ -316,7 +315,7 @@ agents.
 </div>
 
 <div class="mh-cv-section">
-<div class="mh-group-heading">Teaching</div>
+<div class="mh-group-heading">Teaching &amp; Community</div>
 
 <div class="mh-job">
   <div><span class="mh-job-role">Profesor</span> · <span class="mh-job-org">Centro San Valero</span></div>
@@ -325,7 +324,6 @@ agents.
     Taught cloud computing and AWS on the Sistemas y Redes programme, and collaborated on the adult
     information-security course.
   </div>
-</div>
 </div>
 
 <div class="mh-job">
@@ -338,48 +336,6 @@ agents.
 </div>
 </div>
 
-<div class="mh-cv-section">
-<div class="mh-group-heading">Education</div>
-
-<div class="mh-job">
-  <div><span class="mh-job-role">M&aacute;ster Universitario en Ciberseguridad</span> · <span class="mh-job-org">Universidad Carlos III de Madrid</span><span class="mh-badge mh-badge-edu">2016&ndash;2017</span></div>
-  <div class="mh-job-desc">Itinerary: Analista de Ciberseguridad. Thesis: <em>An&aacute;lisis de la seguridad de las bases de datos orientadas a grafos</em>.</div>
-</div>
-
-<div class="mh-job">
-  <div><span class="mh-job-role">Graduado en Servicios y Sistemas de Telecomunicaci&oacute;n</span> · <span class="mh-job-org">Universidad de Zaragoza</span><span class="mh-badge mh-badge-edu">2010&ndash;2015</span></div>
-  <div class="mh-job-desc">Speciality: Telem&aacute;tica, Centro Polit&eacute;cnico Superior. Thesis: <em>Desarrollo de una aplicaci&oacute;n de subtitulado mediante pictogramas para una smart TV y navegadores web</em>.</div>
-</div>
-</div>
-
-<div class="mh-cv-section">
-<div class="mh-group-heading">Honors &amp; Awards</div>
-
-<div class="mh-job">
-  <div><span class="mh-job-role">2nd place</span> &nbsp;·&nbsp; <span class="mh-job-org">AWS AJAM Security Espa&ntilde;a</span><span class="mh-badge mh-badge-edu">2021</span></div>
-</div>
-<div class="mh-job">
-  <div><span class="mh-job-role">Finalist</span> &nbsp;·&nbsp; <span class="mh-job-org">Concurso de J&oacute;venes Profesionales, ISACA Madrid</span><span class="mh-badge mh-badge-edu">2017</span></div>
-</div>
-<div class="mh-job">
-  <div><span class="mh-job-role">Winner</span> &nbsp;·&nbsp; <span class="mh-job-org">Sinfonier Contest: Sinfonier y Smart Cities</span><span class="mh-badge mh-badge-edu">2015</span></div>
-</div>
-</div>
-
-<div class="mh-cv-section">
-<div class="mh-group-heading">Certifications</div>
-
-<div class="mh-job">
-  <div class="mh-job-desc">
-    <strong style="color:#ddd">CompTIA CASP+</strong> &nbsp;·&nbsp; 2021<br>
-    <strong style="color:#ddd">Certificate of Cloud Security Knowledge v4 (CCSK)</strong> &nbsp;·&nbsp; Cloud Security Alliance, 2021<br>
-    <strong style="color:#ddd">Google Associate Cloud Engineer</strong> &nbsp;·&nbsp; 2021<br>
-    <strong style="color:#ddd">Microsoft Certified: Azure Fundamentals</strong> &nbsp;·&nbsp; 2020<br>
-    <strong style="color:#ddd">Cyber Security Foundation Professional (CSFPC)</strong> &nbsp;·&nbsp; CertiProf, 2020<br>
-    <strong style="color:#ddd">Certified Encryption Specialist (ECES)</strong> &nbsp;·&nbsp; EC-Council, 2019<br>
-    <strong style="color:#ddd">Neo4j Certified Professional</strong> &nbsp;·&nbsp; 2016
-  </div>
-</div>
 </div>
 
 <!-- ══════════════ TALKS ══════════════ -->
@@ -418,6 +374,50 @@ agents.
   <li><a href="https://github.com/Miguel000/BlogContent">BlogContent</a> — research posts and write-ups</li>
   <li><a href="https://github.com/Miguel000/OpenSourceTools">OpenSourceTools</a> — cybersecurity tools and contributions</li>
 </ul>
+</div>
+
+<div class="mh-about-section">
+<h3>Education</h3>
+
+<div class="mh-job">
+  <div><span class="mh-job-role">M&aacute;ster Universitario en Ciberseguridad</span> · <span class="mh-job-org">Universidad Carlos III de Madrid</span><span class="mh-badge mh-badge-edu">2016&ndash;2017</span></div>
+  <div class="mh-job-desc">Itinerary: Analista de Ciberseguridad. Thesis: <em>An&aacute;lisis de la seguridad de las bases de datos orientadas a grafos</em>.</div>
+</div>
+
+<div class="mh-job">
+  <div><span class="mh-job-role">Graduado en Servicios y Sistemas de Telecomunicaci&oacute;n</span> · <span class="mh-job-org">Universidad de Zaragoza</span><span class="mh-badge mh-badge-edu">2010&ndash;2015</span></div>
+  <div class="mh-job-desc">Speciality: Telem&aacute;tica, Centro Polit&eacute;cnico Superior. Thesis: <em>Desarrollo de una aplicaci&oacute;n de subtitulado mediante pictogramas para una smart TV y navegadores web</em>.</div>
+</div>
+</div>
+
+<div class="mh-about-section">
+<h3>Honors &amp; Awards</h3>
+
+<div class="mh-job">
+  <div><span class="mh-job-role">2nd place</span> &nbsp;·&nbsp; <span class="mh-job-org">AWS AJAM Security Espa&ntilde;a</span><span class="mh-badge mh-badge-edu">2021</span></div>
+</div>
+<div class="mh-job">
+  <div><span class="mh-job-role">Finalist</span> &nbsp;·&nbsp; <span class="mh-job-org">Concurso de J&oacute;venes Profesionales, ISACA Madrid</span><span class="mh-badge mh-badge-edu">2017</span></div>
+</div>
+<div class="mh-job">
+  <div><span class="mh-job-role">Winner</span> &nbsp;·&nbsp; <span class="mh-job-org">Sinfonier Contest: Sinfonier y Smart Cities</span><span class="mh-badge mh-badge-edu">2015</span></div>
+</div>
+</div>
+
+<div class="mh-about-section">
+<h3>Certifications</h3>
+
+<div class="mh-job">
+  <div class="mh-job-desc">
+    <strong style="color:#ddd">CompTIA CASP+</strong> &nbsp;·&nbsp; 2021<br>
+    <strong style="color:#ddd">Certificate of Cloud Security Knowledge v4 (CCSK)</strong> &nbsp;·&nbsp; Cloud Security Alliance, 2021<br>
+    <strong style="color:#ddd">Google Associate Cloud Engineer</strong> &nbsp;·&nbsp; 2021<br>
+    <strong style="color:#ddd">Microsoft Certified: Azure Fundamentals</strong> &nbsp;·&nbsp; 2020<br>
+    <strong style="color:#ddd">Cyber Security Foundation Professional (CSFPC)</strong> &nbsp;·&nbsp; CertiProf, 2020<br>
+    <strong style="color:#ddd">Certified Encryption Specialist (ECES)</strong> &nbsp;·&nbsp; EC-Council, 2019<br>
+    <strong style="color:#ddd">Neo4j Certified Professional</strong> &nbsp;·&nbsp; 2016
+  </div>
+</div>
 </div>
 
 </div>
@@ -633,12 +633,29 @@ var activeYear = 'all';
 })();
 
 /* ─── TABS ─── */
-document.querySelectorAll('.mh-tab').forEach(function(btn){
-  btn.addEventListener('click', function(){
-    document.querySelectorAll('.mh-tab').forEach(function(b){ b.classList.remove('active'); });
-    document.querySelectorAll('.mh-pane').forEach(function(p){ p.classList.remove('active'); });
-    this.classList.add('active');
-    document.getElementById(this.dataset.target).classList.add('active');
-  });
-});
+(function(){
+  function all(sel){ return Array.prototype.slice.call(document.querySelectorAll(sel)); }
+  var tabs = all('.mh-tab'), panes = all('.mh-pane'), nav = document.querySelector('.mh-nav');
+
+  function activate(btn){
+    var target = document.getElementById(btn.getAttribute('data-target'));
+    if(!target){ return; }
+    for(var i=0;i<tabs.length;i++){ tabs[i].classList.remove('active'); }
+    for(var j=0;j<panes.length;j++){ panes[j].classList.remove('active'); }
+    btn.classList.add('active');
+    target.classList.add('active');
+    /* panes differ a lot in height; if the nav has scrolled out of view, return to it
+       so switching never leaves the reader in blank space below a shorter pane */
+    if(nav){
+      var top = nav.getBoundingClientRect().top;
+      if(top < 0){ window.scrollTo(0, top + (window.pageYOffset||0) - 12); }
+    }
+  }
+
+  for(var k=0;k<tabs.length;k++){
+    (function(btn){
+      btn.addEventListener('click', function(e){ e.preventDefault(); activate(btn); });
+    })(tabs[k]);
+  }
+})();
 </script>
