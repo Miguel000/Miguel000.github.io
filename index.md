@@ -176,6 +176,22 @@ title: Miguel Hernández
   padding-left: 15px;
 }
 .mh-job-list li { margin-bottom: 7px; }
+.mh-job-sublist {
+  color: #777;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 7px 0 2px;
+  padding-left: 2px;
+  list-style: none;
+}
+.mh-job-sublist li { margin-bottom: 4px; padding-left: 14px; position: relative; }
+.mh-job-sublist li:before {
+  content: "\25B8";
+  color: #4a6146;
+  position: absolute;
+  left: 0;
+}
+.mh-job-sublist em { color: #9dbc98; font-style: normal; }
 .mh-job-list strong { color: #9dbc98; font-weight: normal; }
 
 .mh-cv-section { margin-bottom: 30px; }
@@ -252,13 +268,18 @@ agents.
       Built the detection content behind
       <a class="mh-link" href="https://www.sysdig.com/press-releases/sysdig-launches-runtime-security-for-ai-coding-agents" target="_blank">Sysdig's runtime security for AI coding agents</a>
       (launched at RSA Conference 2026), covering <strong>Claude Code</strong>,
-      <strong>OpenAI Codex</strong> and <strong>Gemini CLI</strong>. Detections span agent
-      installation and usage discovery, sensitive-file and credential access, risky CLI arguments
-      that weaken an agent's own safeguards, configuration-directory tampering, anti-forensics
-      (agents removing their own session evidence), binary impersonation, and post-exploitation
-      behaviour &mdash; reverse shells, persistence, kernel-module loading, network reconnaissance
-      and SSH tunnelling. Mapped the ruleset to MITRE ATT&amp;CK and MITRE ATLAS, and maintain the
-      coverage-gap analysis that drives new detections.</li>
+      <strong>OpenAI Codex</strong> and <strong>Gemini CLI</strong>.
+      <ul class="mh-job-sublist">
+        <li><em>Discovery:</em> agent installation and usage across the estate</li>
+        <li><em>Credential access:</em> sensitive files and credential stores</li>
+        <li><em>Weakened safeguards:</em> risky CLI arguments that disable an agent's own guardrails</li>
+        <li><em>Configuration tampering:</em> reads and writes to agent config directories</li>
+        <li><em>Anti-forensics:</em> agents removing their own session evidence</li>
+        <li><em>Impersonation:</em> binaries masquerading as a trusted agent</li>
+        <li><em>Post-exploitation:</em> reverse shells, persistence, kernel-module loading, network reconnaissance and SSH tunnelling</li>
+        <li><em>Coverage:</em> mapped to MITRE ATT&amp;CK and MITRE ATLAS, with an ongoing gap analysis that drives new detections</li>
+      </ul>
+    </li>
     <li><strong>Prempti</strong> (open source, Falco / CNCF).
       Co-authored the default detection ruleset of
       <a class="mh-link" href="https://github.com/falcosecurity/prempti" target="_blank">falcosecurity/prempti</a>,
