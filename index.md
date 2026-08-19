@@ -227,16 +227,14 @@ title: Miguel Hernández
 <p class="mh-tagline">Sr. Threat Research Engineer &nbsp;·&nbsp; Cloud, Kubernetes &amp; AI threat research</p>
 
 <p class="mh-bio-header">
-Miguel Hern&aacute;ndez is a Sr. Threat Research Engineer at Sysdig, where he owns the out-of-the-box
-detection ruleset shipped to every Sysdig customer and built the detection content behind Sysdig's
-runtime security for AI coding agents. Over eleven years he has led named threat-research
-investigations including <strong>LLMjacking</strong> (the credential-resale attack class his team
-named), <strong>SCARLETEEL</strong>, <strong>EMERALDWHALE</strong>, <strong>AMBERSQUID</strong>,
-<strong>RUBYCARP</strong> and <strong>SSH-Snake</strong>. He has given 36 talks since 2016 at
-conferences including <strong>KubeCon EU</strong>, HITB, Hack.lu, DeepSec, HackInParis, RootedCon,
-NoConName and fwd:CloudSec EU, and has taught cloud and security courses for four years. His
-research spans cloud-native threats, runtime detection with Falco, supply chain security and
-adversarial AI.
+Miguel Hern&aacute;ndez is a Sr. Threat Research Engineer at Sysdig. Over eleven years he has led
+named threat-research investigations including <strong>LLMjacking</strong> (the credential-resale
+attack class his team named), <strong>SCARLETEEL</strong>, <strong>EMERALDWHALE</strong>,
+<strong>AMBERSQUID</strong>, <strong>RUBYCARP</strong> and <strong>SSH-Snake</strong>. He has
+given 36 talks since 2016 at conferences including <strong>KubeCon EU</strong>, HITB, Hack.lu,
+DeepSec, HackInParis, RootedCon, NoConName and fwd:CloudSec EU, and has taught cloud and security
+courses for four years. His research spans cloud-native threats, runtime detection with Falco,
+supply chain security and adversarial AI.
 </p>
 
 <div class="mh-nav">
