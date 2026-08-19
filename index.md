@@ -177,21 +177,25 @@ title: Miguel Hernández
 }
 .mh-job-list li { margin-bottom: 7px; }
 .mh-job-sublist {
-  color: #777;
-  font-size: 12px;
-  line-height: 1.5;
-  margin: 7px 0 2px;
-  padding-left: 2px;
   list-style: none;
+  margin: 10px 0 4px;
+  padding: 3px 0 3px 13px;
+  border-left: 2px solid #1e1e1e;
+  font-size: 11.5px;
+  line-height: 1.5;
 }
-.mh-job-sublist li { margin-bottom: 4px; padding-left: 14px; position: relative; }
-.mh-job-sublist li:before {
-  content: "\25B8";
-  color: #4a6146;
-  position: absolute;
-  left: 0;
+.mh-job-sublist li {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 3px 12px;
+  margin-bottom: 5px;
 }
-.mh-job-sublist em { color: #9dbc98; font-style: normal; }
+.mh-sub-k { color: #9a9a9a; }
+.mh-sub-v { color: #6b6b6b; }
+@media (max-width: 620px) {
+  .mh-job-sublist li { grid-template-columns: 1fr; gap: 0; }
+  .mh-sub-k { color: #a8a8a8; }
+}
 .mh-job-list strong { color: #9dbc98; font-weight: normal; }
 
 .mh-cv-section { margin-bottom: 30px; }
@@ -270,14 +274,14 @@ agents.
       (launched at RSA Conference 2026), covering <strong>Claude Code</strong>,
       <strong>OpenAI Codex</strong> and <strong>Gemini CLI</strong>.
       <ul class="mh-job-sublist">
-        <li><em>Discovery:</em> agent installation and usage across the estate</li>
-        <li><em>Credential access:</em> sensitive files and credential stores</li>
-        <li><em>Weakened safeguards:</em> risky CLI arguments that disable an agent's own guardrails</li>
-        <li><em>Configuration tampering:</em> reads and writes to agent config directories</li>
-        <li><em>Anti-forensics:</em> agents removing their own session evidence</li>
-        <li><em>Impersonation:</em> binaries masquerading as a trusted agent</li>
-        <li><em>Post-exploitation:</em> reverse shells, persistence, kernel-module loading, network reconnaissance and SSH tunnelling</li>
-        <li><em>Coverage:</em> mapped to MITRE ATT&amp;CK and MITRE ATLAS, with an ongoing gap analysis that drives new detections</li>
+        <li><span class="mh-sub-k">Discovery</span><span class="mh-sub-v">agent installation and usage across the estate</span></li>
+        <li><span class="mh-sub-k">Credential access</span><span class="mh-sub-v">sensitive files and credential stores</span></li>
+        <li><span class="mh-sub-k">Weakened safeguards</span><span class="mh-sub-v">risky CLI arguments that disable an agent's own guardrails</span></li>
+        <li><span class="mh-sub-k">Config tampering</span><span class="mh-sub-v">reads and writes to agent configuration directories</span></li>
+        <li><span class="mh-sub-k">Anti-forensics</span><span class="mh-sub-v">agents removing their own session evidence</span></li>
+        <li><span class="mh-sub-k">Impersonation</span><span class="mh-sub-v">binaries masquerading as a trusted agent</span></li>
+        <li><span class="mh-sub-k">Post-exploitation</span><span class="mh-sub-v">reverse shells, persistence, kernel-module loading, network reconnaissance and SSH tunnelling</span></li>
+        <li><span class="mh-sub-k">Coverage</span><span class="mh-sub-v">mapped to MITRE ATT&amp;CK and MITRE ATLAS, with an ongoing gap analysis that drives new detections</span></li>
       </ul>
     </li>
     <li><strong>Prempti</strong> (open source, Falco / CNCF).
