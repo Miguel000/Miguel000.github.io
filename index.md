@@ -148,6 +148,26 @@ title: Miguel Hernández
 .mh-about-section { margin-bottom: 20px; }
 .mh-about-section h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #444; margin: 0 0 10px; padding-bottom: 5px; border-bottom: 1px solid #1e1e1e; }
 
+.mh-bio-header {
+  color: #888;
+  font-size: 13px;
+  line-height: 1.65;
+  margin: 14px 0 0;
+  max-width: 78ch;
+}
+.mh-bio-header strong { color: #bbb; font-weight: normal; }
+.mh-oss-stars {
+  display: inline-block;
+  font-size: 10px;
+  color: #d29922;
+  border: 1px solid #5a3e00;
+  background: #1a1200;
+  border-radius: 2px;
+  padding: 1px 6px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
 /* ── CV / Experience ── */
 .mh-job-list {
   color: #888;
@@ -185,7 +205,20 @@ title: Miguel Hernández
 
 # Miguel Hernández
 
-<p class="mh-tagline">Sr. Threat Research Engineer · Sysdig · Cloud, Kubernetes &amp; AI threat research — LLMjacking, SCARLETEEL, EMERALDWHALE</p>
+<p class="mh-tagline">Sr. Threat Research Engineer &nbsp;·&nbsp; Cloud, Kubernetes &amp; AI threat research</p>
+
+<p class="mh-bio-header">
+Miguel Hern&aacute;ndez is a Sr. Threat Research Engineer at Sysdig, where he owns the out-of-the-box
+detection ruleset shipped to every Sysdig customer and built the detection content behind Sysdig's
+runtime security for AI coding agents. Over eleven years he has led named threat-research
+investigations including <strong>LLMjacking</strong> (the credential-resale attack class his team
+named), <strong>SCARLETEEL</strong>, <strong>EMERALDWHALE</strong>, <strong>AMBERSQUID</strong>,
+<strong>RUBYCARP</strong> and <strong>SSH-Snake</strong>. He has given 36 talks since 2016 at
+conferences including <strong>KubeCon EU</strong>, HITB, Hack.lu, DeepSec, HackInParis, RootedCon,
+NoConName and fwd:CloudSec EU, and has taught cloud and security courses for four years. His
+research spans cloud-native threats, runtime detection with Falco, supply chain security and
+adversarial AI.
+</p>
 
 <div class="mh-nav">
   <button class="mh-tab active" data-target="mh-cv">Experience</button>
@@ -256,7 +289,7 @@ agents.
 
 <div class="mh-job">
   <div><span class="mh-job-role">Security Researcher &amp; Pentester</span> · <span class="mh-job-org">BBVA Next Technologies</span></div>
-  <div class="mh-job-meta">Jun 2018 &mdash; Sept 2021 &nbsp;·&nbsp; Madrid, ES</div>
+  <div class="mh-job-meta">Jun 2017 &mdash; Sept 2021 &nbsp;·&nbsp; Madrid, ES</div>
   <div class="mh-job-desc">
     Cybersecurity research lab (i4s squad): proofs of concept and innovative security solutions for
     BBVA products. Published whitepapers on adversarial machine learning and synthetic content.
@@ -265,7 +298,7 @@ agents.
 
 <div class="mh-job">
   <div><span class="mh-job-role">SecDev Technician</span> · <span class="mh-job-org">Innovation 4 Security</span></div>
-  <div class="mh-job-meta">Dec 2015 &mdash; Jun 2018 &nbsp;·&nbsp; Madrid, ES</div>
+  <div class="mh-job-meta">Dec 2015 &mdash; Jun 2017 &nbsp;·&nbsp; Madrid, ES</div>
   <div class="mh-job-desc">
     Anomaly detection for fraud, threat intelligence and defensive security using graph databases,
     Spark and ETL. Collaborated with <strong>MIT</strong> on a machine-learning project with BBVA.
@@ -295,29 +328,58 @@ agents.
 </div>
 </div>
 
+<div class="mh-job">
+  <div><span class="mh-job-role">Core member</span> &nbsp;·&nbsp; <span class="mh-job-org">Cibercooperante, INCIBE</span><span class="mh-badge mh-badge-cur">since 2018</span></div>
+  <div class="mh-job-meta">Spain</div>
+  <div class="mh-job-desc">
+    Volunteer cybersecurity awareness programme run by Spain's National Cybersecurity Institute.
+    Sessions delivered with I.E.S. Blecua and Centro San Valero.
+  </div>
+</div>
+</div>
+
 <div class="mh-cv-section">
 <div class="mh-group-heading">Education</div>
 
 <div class="mh-job">
   <div><span class="mh-job-role">M&aacute;ster Universitario en Ciberseguridad</span> · <span class="mh-job-org">Universidad Carlos III de Madrid</span><span class="mh-badge mh-badge-edu">2016&ndash;2017</span></div>
-  <div class="mh-job-desc">Itinerary: Analista de Ciberseguridad.</div>
+  <div class="mh-job-desc">Itinerary: Analista de Ciberseguridad. Thesis: <em>An&aacute;lisis de la seguridad de las bases de datos orientadas a grafos</em>.</div>
 </div>
 
 <div class="mh-job">
   <div><span class="mh-job-role">Graduado en Servicios y Sistemas de Telecomunicaci&oacute;n</span> · <span class="mh-job-org">Universidad de Zaragoza</span><span class="mh-badge mh-badge-edu">2010&ndash;2015</span></div>
-  <div class="mh-job-desc">Speciality: Telem&aacute;tica.</div>
+  <div class="mh-job-desc">Speciality: Telem&aacute;tica, Centro Polit&eacute;cnico Superior. Thesis: <em>Desarrollo de una aplicaci&oacute;n de subtitulado mediante pictogramas para una smart TV y navegadores web</em>.</div>
 </div>
 </div>
 
 <div class="mh-cv-section">
-<div class="mh-group-heading">Recognition</div>
+<div class="mh-group-heading">Honors &amp; Awards</div>
 
 <div class="mh-job">
-  <div><span class="mh-job-role">I Concurso J&oacute;venes Profesionales</span> · <span class="mh-job-org">ISACA Madrid</span><span class="mh-badge mh-badge-edu">2014</span></div>
-  <div class="mh-job-desc">For a final-degree project on SNMP security.</div>
+  <div><span class="mh-job-role">2nd place</span> &nbsp;·&nbsp; <span class="mh-job-org">AWS AJAM Security Espa&ntilde;a</span><span class="mh-badge mh-badge-edu">2021</span></div>
+</div>
+<div class="mh-job">
+  <div><span class="mh-job-role">Finalist</span> &nbsp;·&nbsp; <span class="mh-job-org">Concurso de J&oacute;venes Profesionales, ISACA Madrid</span><span class="mh-badge mh-badge-edu">2017</span></div>
+</div>
+<div class="mh-job">
+  <div><span class="mh-job-role">Winner</span> &nbsp;·&nbsp; <span class="mh-job-org">Sinfonier Contest: Sinfonier y Smart Cities</span><span class="mh-badge mh-badge-edu">2015</span></div>
 </div>
 </div>
 
+<div class="mh-cv-section">
+<div class="mh-group-heading">Certifications</div>
+
+<div class="mh-job">
+  <div class="mh-job-desc">
+    <strong style="color:#ddd">CompTIA CASP+</strong> &nbsp;·&nbsp; 2021<br>
+    <strong style="color:#ddd">Certificate of Cloud Security Knowledge v4 (CCSK)</strong> &nbsp;·&nbsp; Cloud Security Alliance, 2021<br>
+    <strong style="color:#ddd">Google Associate Cloud Engineer</strong> &nbsp;·&nbsp; 2021<br>
+    <strong style="color:#ddd">Microsoft Certified: Azure Fundamentals</strong> &nbsp;·&nbsp; 2020<br>
+    <strong style="color:#ddd">Cyber Security Foundation Professional (CSFPC)</strong> &nbsp;·&nbsp; CertiProf, 2020<br>
+    <strong style="color:#ddd">Certified Encryption Specialist (ECES)</strong> &nbsp;·&nbsp; EC-Council, 2019<br>
+    <strong style="color:#ddd">Neo4j Certified Professional</strong> &nbsp;·&nbsp; 2016
+  </div>
+</div>
 </div>
 
 <!-- ══════════════ TALKS ══════════════ -->
@@ -358,13 +420,6 @@ agents.
 </ul>
 </div>
 
-<div class="mh-about-section">
-<h3>Bio</h3>
-<p style="color:#888;font-size:13px;line-height:1.6">
-Miguel Hern&aacute;ndez is a Sr. Threat Research Engineer at Sysdig, where he owns the out-of-the-box detection ruleset shipped to every Sysdig customer and built the detection content behind Sysdig's runtime security for AI coding agents. Over eleven years he has led named threat-research investigations including <strong>LLMjacking</strong> &mdash; the credential-resale attack class his team named &mdash; along with <strong>SCARLETEEL</strong>, <strong>EMERALDWHALE</strong>, <strong>AMBERSQUID</strong>, <strong>RUBYCARP</strong> and <strong>SSH-Snake</strong>. He has given 35 talks since 2016 at conferences including <strong>KubeCon EU</strong>, HITB, Hack.lu, DeepSec, HackInParis, RootedCon, NoConName and fwd:CloudSec EU, and taught cloud and security courses for four years. His research spans cloud-native threats, runtime detection with Falco, supply chain security and adversarial AI.
-</p>
-</div>
-
 </div>
 
 <script>
@@ -381,9 +436,9 @@ var TALKS = [
   {y:2024, conf:"KCD Austria", loc:"Vienna, AT", title:"Detecting Unexpected Behavior and Intrusions with Falco + Atomic Red Team", workshop:true},
   {y:2024, conf:"BSides Barcelona", loc:"Barcelona, ES", title:"Beyond Cryptominers: Unveiling the Depths of AWS Post-Exploitation Strategies"},
   {y:2023, conf:"HackInParis", loc:"Paris, FR", title:"Dig Deeper into OWASP Kubernetes"},
-  {y:2023, conf:"RootedCon", loc:"Madrid, ES", title:"Offensive Artificial Intelligence — How to be prepared", workshop:true},
+  {y:2023, conf:"RootedCon", loc:"Madrid, ES", title:"Offensive Artificial Intelligence — How to be prepared", workshop:true, slides:"https://www.rootedcon.com/archive/rooted2023/"},
   {y:2023, conf:"KCD Spain", loc:"Spain", title:"OWASP Kubernetes", video:"https://www.youtube.com/watch?v=gJc8JIc2VvY"},
-  {y:2023, conf:"SecAdmin", loc:"Spain", title:"Falco 101 — Detecting threats in real-time", workshop:true},
+  {y:2023, conf:"SecAdmin", loc:"Sevilla, ES", title:"Falco 101 — Detecting threats in real-time", workshop:true},
   {y:2023, conf:"EsLibre Zaragoza", loc:"Zaragoza, ES", title:"Introducción práctica a Runtime Security con Falco", workshop:true, video:"https://commons.wikimedia.org/wiki/File:EsLibre_2023_P46_-_Miguel_Hern%C3%A1ndez_Boza,_Vicente_J._Jim%C3%A9nez_Miras_-_Introducci%C3%B3n_pr%C3%A1ctica_a_Runtime_Security_con_Falco.webm"},
   {y:2022, conf:"KubeCon EU", loc:"Valencia, ES", title:"How Attackers Use Exposed Prometheus Server to Exploit Kubernetes Cluster", video:"https://www.youtube.com/watch?v=5cbbm_L6n7w"},
   {y:2022, conf:"DragonJar", loc:"Colombia", title:"Después de proteger la infraestructura y los datos, deberías preocuparte por tus modelos de IA", video:"https://www.youtube.com/watch?v=7uoWwFbc9g0"},
@@ -392,18 +447,19 @@ var TALKS = [
   {y:2021, conf:"STIC CCN CERT", loc:"Spain", title:"Introduccion al Adversarial Machine Learning", video:"https://www.youtube.com/watch?v=jsDLt5gBnmY"},
   {y:2021, conf:"JNIC", loc:"Spain", title:"Estado del arte en generación y detección de contenido sintético. Limitaciones y oportunidades"},
   {y:2020, conf:"StandOff", loc:"Online", title:"Issues and limitations in generation and detection of synthetic data", video:"https://www.youtube.com/watch?v=SjeE2erDzFY"},
-  {y:2020, conf:"Cybercamp", loc:"Spain", title:"Y se ARmo la marimorena! Seguridad en realidad aumentada", video:"https://www.youtube.com/watch?v=TJirrht7MuQ"},
+  {y:2019, conf:"Cybercamp", loc:"Madrid, ES", title:"Y se ARmo la marimorena! Seguridad en realidad aumentada", video:"https://www.youtube.com/watch?v=COy76fM0GWQ"},
   {y:2019, conf:"HITB", loc:"Amsterdam, NL", title:"DeepUnicode, problems with confusables", video:"https://www.youtube.com/watch?v=9SXRe0dWyxM"},
-  {y:2019, conf:"STIC CCN CERT", loc:"Spain", title:"Protection against DeepFake"},
-  {y:2019, conf:"Codemotion", loc:"Spain", title:"Blackmirror o realidad — OSINT + Face recognition"},
+  {y:2019, conf:"STIC CCN CERT", loc:"Madrid, ES", title:"Protection against DeepFake", video:"https://www.youtube.com/watch?v=ist4Za3C2DY"},
+  {y:2019, conf:"Codemotion", loc:"Madrid, ES", title:"Blackmirror o realidad — OSINT + Face recognition", video:"https://www.youtube.com/watch?v=Arnx1QDbt-0"},
   {y:2019, conf:"Cybercamp", loc:"Spain", title:"DeepConfusables", video:"https://www.youtube.com/watch?v=8uVX9lEm4R0"},
   {y:2019, conf:"JNIC", loc:"Spain", title:"DeepConfusables: mejorando la detección de ataques basados en codificación Unicode"},
   {y:2019, conf:"RootedCon Valencia", loc:"Valencia, ES", title:"Playing with Mastodon for fun and profit"},
-  {y:2017, conf:"Secrypt", loc:"", title:"(In) Security in Graph Databases"},
+  {y:2018, conf:"JNIC", loc:"San Sebasti\u00e1n, ES", title:"Privacidad en redes sociales libres", slides:"http://2018.jnic.es/sesiones.html"},
+  {y:2017, conf:"Secrypt", loc:"Madrid, ES", title:"(In) Security in Graph Databases", slides:"http://www.scitepress.org/DigitalLibrary/Link.aspx?doi=10.5220/0006419003030310"},
   {y:2017, conf:"Cybercamp", loc:"Spain", title:"Seguridad en redes sociales libres", video:"https://www.youtube.com/watch?v=ZfNzvBhsKIg"},
   {y:2017, conf:"JNIC", loc:"Spain", title:"Análisis de la seguridad de las bases de datos orientadas a grafos"},
   {y:2016, conf:"RootedCon", loc:"Madrid, ES", title:"(In) Security in Graph Databases", video:"https://www.youtube.com/watch?v=K0_GU8__3qw"},
-  {y:2016, conf:"NoConName", loc:"Spain", title:"Seguridad en redes sociales libres"},
+  {y:2016, conf:"NoConName", loc:"Barcelona, ES", title:"Seguridad en redes sociales libres", video:"https://vimeo.com/249057699"},
   {y:2016, conf:"NavajaNegra", loc:"Albacete, ES", title:"Espiando redes de microblogging"}
 ];
 
@@ -427,26 +483,26 @@ var BLOG = [
   {platform:"sysdig", src:"Sysdig Blog", title:"LABRAT: Stealthy Cryptojacking and Proxyjacking Campaign Targeting GitLab", url:"https://sysdig.com/blog/labrat-cryptojacking-proxyjacking-campaign/", desc:"A deep dive into a stealthy attack combining crypto- and proxyjacking targeting GitLab."},
   {platform:"sysdig", src:"Sysdig Blog", title:"Why Companies Still Struggle with Least Privilege in the Cloud", url:"https://sysdig.com/blog/identity-access-management-difficult-cloud/", desc:"Discussion on the persistent IAM challenges in cloud security."},
   {platform:"sysdig", src:"Sysdig Blog", title:"Securing SSH on EC2", url:"https://sysdig.com/blog/aws-secure-ssh-ec2-threats/", desc:"Best practices for hardening SSH access in AWS EC2 environments."},
-  {platform:"bbva", src:"BBVA Next Tech", title:"Adversarial Machine Learning (Whitepaper)", url:"https://www.bbvanexttechnologies.com/wp-content/uploads/2020/11/whitepaper-adversarial-machine-learning.pdf", desc:"Techniques and threats related to adversarial ML. Co-referenced in offensive-ai-compilation."},
-  {platform:"bbva", src:"BBVA Next Tech", title:"Contenido Sintético (Whitepaper)", url:"https://www.bbvanexttechnologies.com/wp-content/uploads/2020/11/whitepaper-contenido-sintetico.pdf", desc:"An overview of synthetic content and its implications for cybersecurity."},
+  {platform:"bbva", src:"BBVA Next Tech", year:"2020", title:"Adversarial Machine Learning (Whitepaper)", url:"https://www.bbvanexttechnologies.com/wp-content/uploads/2020/11/whitepaper-adversarial-machine-learning.pdf", desc:"Techniques and threats related to adversarial ML. Co-referenced in offensive-ai-compilation."},
+  {platform:"bbva", src:"BBVA Next Tech", year:"2020", title:"Contenido Sintético (Whitepaper)", url:"https://www.bbvanexttechnologies.com/wp-content/uploads/2020/11/whitepaper-contenido-sintetico.pdf", desc:"An overview of synthetic content and its implications for cybersecurity."},
   {platform:"media", src:"Aragón Radio", title:"Hackers vs ciberdelincuentes", url:"https://www.cartv.es/aragonradio/radio?play=podcast/104463", desc:"Discussion on the difference between hackers and cybercriminals."},
   {platform:"media", src:"Aragón Radio", title:"Ciberseguridad en verano", url:"https://www.cartv.es/aragonradio/radio?play=podcast/108338", desc:"How to stay cyber-safe during summer vacations."},
   {platform:"media", src:"Aragon Inteligencia", title:"Tardes de Ciberseguridad Unizar", url:"https://araintel.com/articulos/dia-a-dia-de-un-investigador-de-ciberseguridad-en-sysdig/", desc:"¿Cómo es el día a día de un investigador de ciberseguridad en Sysdig?"},
   {platform:"media", src:"Business Insider", title:"Detección de deepfakes", url:"https://www.businessinsider.es/consejos-2-expertos-ciberseguridad-detectar-deepfakes-831319", desc:"Tips from cybersecurity experts on detecting deepfakes."},
-  {platform:"media", src:"Revista SIC", title:"Análisis de la seguridad de las bases de datos orientadas a grafos", url:"https://revistasic.es/archivo/index8463.html?option=com_content&view=article&id=1825&Itemid=1589", desc:"Research paper analyzing information leakage and design flaws in graph-oriented databases."},
-  {platform:"academic", src:"SECRYPT", title:"(In) Security in Graph Databases — Analysis and Data Leaks", url:"https://press.um.si/index.php/ump/catalog/book/296", desc:"Review of the most widespread graph databases, detecting security problems and improper default configurations."},
-  {platform:"academic", src:"CECC 2017", title:"Why Did I End Up Living in a Cave? Risks of IoT at home", desc:"Conference paper on the security risks of consumer IoT in the home."},
+  {platform:"media", src:"Revista SIC", year:"2017", title:"Análisis de la seguridad de las bases de datos orientadas a grafos", url:"https://revistasic.es/archivo/index8463.html?option=com_content&view=article&id=1825&Itemid=1589", desc:"Research paper analyzing information leakage and design flaws in graph-oriented databases."},
+  {platform:"academic", src:"SECRYPT", year:"2017", title:"(In) Security in Graph Databases — Analysis and Data Leaks", url:"https://press.um.si/index.php/ump/catalog/book/296", desc:"Review of the most widespread graph databases, detecting security problems and improper default configurations."},
+  {platform:"academic", src:"CECC 2017", year:"2017", title:"Why Did I End Up Living in a Cave? Risks of IoT at home", desc:"Conference paper on the security risks of consumer IoT in the home."},
   {platform:"media", src:"El lado del mal", title:"Desenmascarar cuentas de Twitter a través de Sinfonier", url:"https://www.elladodelmal.com/2015/12/desenmascarar-cuentas-de-twitter-traves.html", desc:""}
 ];
 
 var OSS = [
-  {name:"Prempti", url:"https://github.com/falcosecurity/prempti", role:"Rules co-author", desc:"Falco-powered policy and visibility layer for AI coding agents (Falco/CNCF sandbox). Intercepts agent tool calls before execution and returns allow/deny/ask verdicts. Co-authored the default detection ruleset — persistence, MCP and skill content, sandbox-disable and agent threat detection."},
-  {name:"GraFScaN", url:"https://github.com/Miguel000/GraFScaN", role:"Creator", desc:"Python tool to discover and fingerprint graph databases (Neo4j, JanusGraph) for red team reconnaissance and vulnerability assessment."},
+  {name:"Prempti", stars:"★ 196", url:"https://github.com/falcosecurity/prempti", role:"Rules co-author", desc:"Falco-powered policy and visibility layer for AI coding agents (Falco/CNCF sandbox). Intercepts agent tool calls before execution and returns allow/deny/ask verdicts. Co-authored the default detection ruleset — persistence, MCP and skill content, sandbox-disable and agent threat detection."},
+  {name:"GraFScaN", stars:"★ 21", url:"https://github.com/Miguel000/GraFScaN", role:"Creator", desc:"Python tool to discover and fingerprint graph databases (Neo4j, JanusGraph) for red team reconnaissance and vulnerability assessment."},
   {name:"DeepConfusables", url:"https://github.com/jiep/deep-confusables-cli", role:"Creator", desc:"Combines ML and confusable character domains (homoglyphs) to analyze domain obfuscation attacks used in phishing and impersonation."},
-  {name:"SpyScrap", url:"https://github.com/RuthGnz/SpyScrap", role:"Developer", desc:"Platform to analyze your digital fingerprint using OSINT techniques, browser fingerprinting, and facial recognition."},
-  {name:"offensive-ai-compilation", url:"https://github.com/jiep/offensive-ai-compilation", role:"Maintainer", desc:"Curated list of tools, papers, and resources covering Offensive AI research."},
+  {name:"SpyScrap", stars:"★ 234", url:"https://github.com/RuthGnz/SpyScrap", role:"Developer", desc:"Platform to analyze your digital fingerprint using OSINT techniques, browser fingerprinting, and facial recognition."},
+  {name:"offensive-ai-compilation", stars:"★ 1418", url:"https://github.com/jiep/offensive-ai-compilation", role:"Maintainer", desc:"Curated list of tools, papers, and resources covering Offensive AI research."},
   {name:"Synthetic Content Toolkit", url:"https://github.com/Miguel000/tools-generation-detection-synthetic-content", role:"Co-Creator", desc:"Curated tools, papers, and resources focused on generation and detection of synthetic content — deepfakes, GANs, synthetic media."},
-  {name:"Fake Video Forensics", url:"https://github.com/Miguel000/fakeVideoFoarensics", role:"Co-Creator", desc:"Detects fake faces in videos using models evolved from FaceForensics++. Handles DeepFakes, FaceSwap, and Face2Face generated content."}
+  {name:"Fake Video Forensics", url:"https://github.com/Miguel000/fakeVideoForensics", role:"Co-Creator", desc:"Detects fake faces in videos using models evolved from FaceForensics++. Handles DeepFakes, FaceSwap, and Face2Face generated content."}
 ];
 
 /* ─── HELPERS ─── */
@@ -567,7 +623,9 @@ var activeYear = 'all';
   OSS.forEach(function(p){
     html += '<div class="mh-oss-card">';
     html += '<div class="mh-oss-name"><a href="'+esc(p.url)+'" target="_blank">'+esc(p.name)+'</a>';
-    html += '<span class="mh-oss-role">'+esc(p.role)+'</span></div>';
+    html += '<span class="mh-oss-role">'+esc(p.role)+'</span>';
+    if(p.stars) html += '<span class="mh-oss-stars">'+esc(p.stars)+'</span>';
+    html += '</div>';
     html += '<div class="mh-oss-desc">'+esc(p.desc)+'</div>';
     html += '</div>';
   });
