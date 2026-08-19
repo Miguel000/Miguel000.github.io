@@ -147,21 +147,181 @@ title: Miguel Hernández
 .mh-about-links a { color: #63c0f5; }
 .mh-about-section { margin-bottom: 20px; }
 .mh-about-section h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #444; margin: 0 0 10px; padding-bottom: 5px; border-bottom: 1px solid #1e1e1e; }
+
+/* ── CV / Experience ── */
+.mh-job-list {
+  color: #888;
+  font-size: 12px;
+  line-height: 1.55;
+  margin: 9px 0 0;
+  padding-left: 15px;
+}
+.mh-job-list li { margin-bottom: 7px; }
+.mh-job-list strong { color: #9dbc98; font-weight: normal; }
+
+.mh-cv-section { margin-bottom: 30px; }
+.mh-job {
+  padding: 10px 0 10px 14px;
+  border-left: 2px solid #1e1e1e;
+  margin: 6px 0;
+  transition: border-color .15s;
+}
+.mh-job:hover { border-left-color: #9dbc98; }
+.mh-job-role { color: #ddd; font-size: 13px; font-weight: bold; }
+.mh-job-org { color: #9dbc98; font-size: 13px; }
+.mh-job-meta {
+  color: #555;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 3px 0 5px;
+}
+.mh-job-desc { color: #888; font-size: 12px; line-height: 1.55; margin-top: 4px; }
+.mh-badge-cur { color: #9dbc98; border-color: #2f4a2c; background: #111a10; }
+.mh-badge-edu { color: #63c0f5; border-color: #0d3550; background: #08161f; }
+.mh-cv-intro { color: #888; font-size: 13px; line-height: 1.6; margin: 0 0 24px; }
+
 </style>
 
 # Miguel Hernández
 
-<p class="mh-tagline">Sr. Threat Research Engineer · Sysdig · Security researcher &amp; conference speaker</p>
+<p class="mh-tagline">Sr. Threat Research Engineer · Sysdig · Cloud, Kubernetes &amp; AI threat research — LLMjacking, SCARLETEEL, EMERALDWHALE</p>
 
 <div class="mh-nav">
-  <button class="mh-tab active" data-target="mh-talks">Talks</button>
+  <button class="mh-tab active" data-target="mh-cv">Experience</button>
+  <button class="mh-tab" data-target="mh-talks">Talks</button>
   <button class="mh-tab" data-target="mh-blog">Blog</button>
   <button class="mh-tab" data-target="mh-oss">Open Source</button>
   <button class="mh-tab" data-target="mh-about">About</button>
 </div>
 
+<!-- ══════════════ EXPERIENCE ══════════════ -->
+<div id="mh-cv" class="mh-pane active">
+
+<p class="mh-cv-intro">
+Eleven years in security research, from graph-database and OSINT work to cloud-native threat
+research and runtime detection engineering. Currently building detection content for AI coding
+agents.
+</p>
+
+<div class="mh-cv-section">
+<div class="mh-group-heading">Experience</div>
+
+<div class="mh-job">
+  <div><span class="mh-job-role">Sr. Threat Research Engineer</span> · <span class="mh-job-org">Sysdig</span><span class="mh-badge mh-badge-cur">current</span></div>
+  <div class="mh-job-meta">May 2023 &mdash; Present &nbsp;·&nbsp; Spain, remote</div>
+  <div class="mh-job-desc">
+    Own the out-of-the-box detection ruleset shipped to every Sysdig customer, end to end &mdash;
+    rule authoring, tuning and false-positive reduction, condition performance, pre-production
+    validation and release.
+  </div>
+  <ul class="mh-job-list">
+    <li><strong>AI coding agent detection.</strong>
+      Built the detection content behind
+      <a class="mh-link" href="https://www.sysdig.com/press-releases/sysdig-launches-runtime-security-for-ai-coding-agents" target="_blank">Sysdig's runtime security for AI coding agents</a>
+      (launched at RSA Conference 2026), covering <strong>Claude Code</strong>,
+      <strong>OpenAI Codex</strong> and <strong>Gemini CLI</strong>. Detections span agent
+      installation and usage discovery, sensitive-file and credential access, risky CLI arguments
+      that weaken an agent's own safeguards, configuration-directory tampering, anti-forensics
+      (agents removing their own session evidence), binary impersonation, and post-exploitation
+      behaviour &mdash; reverse shells, persistence, kernel-module loading, network reconnaissance
+      and SSH tunnelling. Mapped the ruleset to MITRE ATT&amp;CK and MITRE ATLAS, and maintain the
+      coverage-gap analysis that drives new detections.</li>
+    <li><strong>Prempti</strong> (open source, Falco / CNCF).
+      Co-authored the default detection ruleset of
+      <a class="mh-link" href="https://github.com/falcosecurity/prempti" target="_blank">falcosecurity/prempti</a>,
+      the Falco-powered policy and visibility layer that intercepts an AI coding agent's tool calls
+      before they execute and returns an allow / deny / ask verdict. Contributed roughly 1,570 lines
+      of Falco rules across four sets &mdash; persistence vectors, MCP and skill content,
+      sandbox-disable attempts, and general agent threat detection.</li>
+    <li><strong>Detection quality and performance.</strong>
+      Built the measurement tooling the team tunes from &mdash; a 0&ndash;100 rule-quality scorer
+      covering the full out-of-the-box runtime ruleset, plus noise, trend and performance dashboards
+      that turn detection quality into something measurable rather than argued.</li>
+    <li><strong>Threat research.</strong>
+      Led named investigations including <strong>LLMjacking</strong>,
+      <strong>EMERALDWHALE</strong>, <strong>SCARLETEEL</strong>, <strong>AMBERSQUID</strong>,
+      <strong>CRYSTALRAY</strong> and <strong>LABRAT</strong>.</li>
+  </ul>
+</div>
+
+<div class="mh-job">
+  <div><span class="mh-job-role">Security Content Engineer</span> · <span class="mh-job-org">Sysdig</span></div>
+  <div class="mh-job-meta">Sept 2021 &mdash; May 2023 &nbsp;·&nbsp; San Francisco, US</div>
+  <div class="mh-job-desc">
+    Authoritative technical content on Kubernetes and cloud security &mdash; research blogs,
+    whitepapers, guides and video.
+  </div>
+</div>
+
+<div class="mh-job">
+  <div><span class="mh-job-role">Security Researcher &amp; Pentester</span> · <span class="mh-job-org">BBVA Next Technologies</span></div>
+  <div class="mh-job-meta">Jun 2018 &mdash; Sept 2021 &nbsp;·&nbsp; Madrid, ES</div>
+  <div class="mh-job-desc">
+    Cybersecurity research lab (i4s squad): proofs of concept and innovative security solutions for
+    BBVA products. Published whitepapers on adversarial machine learning and synthetic content.
+  </div>
+</div>
+
+<div class="mh-job">
+  <div><span class="mh-job-role">SecDev Technician</span> · <span class="mh-job-org">Innovation 4 Security</span></div>
+  <div class="mh-job-meta">Dec 2015 &mdash; Jun 2018 &nbsp;·&nbsp; Madrid, ES</div>
+  <div class="mh-job-desc">
+    Anomaly detection for fraud, threat intelligence and defensive security using graph databases,
+    Spark and ETL. Collaborated with <strong>MIT</strong> on a machine-learning project with BBVA.
+  </div>
+</div>
+
+<div class="mh-job">
+  <div><span class="mh-job-role">Beca Talentum</span> · <span class="mh-job-org">ElevenPaths (Telef&oacute;nica)</span></div>
+  <div class="mh-job-meta">Jun 2015 &mdash; Dec 2015 &nbsp;·&nbsp; Madrid, ES</div>
+  <div class="mh-job-desc">
+    NLP and big-data proofs of concept. Built OSINT extraction modules (YouTube, Google+, Blogger,
+    SoundCloud) for Sinfonier, plus graph-based visual intelligence with Neo4j.
+  </div>
+</div>
+</div>
+
+<div class="mh-cv-section">
+<div class="mh-group-heading">Teaching</div>
+
+<div class="mh-job">
+  <div><span class="mh-job-role">Profesor</span> · <span class="mh-job-org">Centro San Valero</span></div>
+  <div class="mh-job-meta">Sept 2020 &mdash; Jan 2025 &nbsp;·&nbsp; Zaragoza, ES</div>
+  <div class="mh-job-desc">
+    Taught cloud computing and AWS on the Sistemas y Redes programme, and collaborated on the adult
+    information-security course.
+  </div>
+</div>
+</div>
+
+<div class="mh-cv-section">
+<div class="mh-group-heading">Education</div>
+
+<div class="mh-job">
+  <div><span class="mh-job-role">M&aacute;ster Universitario en Ciberseguridad</span> · <span class="mh-job-org">Universidad Carlos III de Madrid</span><span class="mh-badge mh-badge-edu">2016&ndash;2017</span></div>
+  <div class="mh-job-desc">Itinerary: Analista de Ciberseguridad.</div>
+</div>
+
+<div class="mh-job">
+  <div><span class="mh-job-role">Graduado en Servicios y Sistemas de Telecomunicaci&oacute;n</span> · <span class="mh-job-org">Universidad de Zaragoza</span><span class="mh-badge mh-badge-edu">2010&ndash;2015</span></div>
+  <div class="mh-job-desc">Speciality: Telem&aacute;tica.</div>
+</div>
+</div>
+
+<div class="mh-cv-section">
+<div class="mh-group-heading">Recognition</div>
+
+<div class="mh-job">
+  <div><span class="mh-job-role">I Concurso J&oacute;venes Profesionales</span> · <span class="mh-job-org">ISACA Madrid</span><span class="mh-badge mh-badge-edu">2014</span></div>
+  <div class="mh-job-desc">For a final-degree project on SNMP security.</div>
+</div>
+</div>
+
+</div>
+
 <!-- ══════════════ TALKS ══════════════ -->
-<div id="mh-talks" class="mh-pane active">
+<div id="mh-talks" class="mh-pane">
   <div class="mh-filters" id="mh-years"></div>
   <div id="mh-talk-list"></div>
 </div>
@@ -185,6 +345,7 @@ title: Miguel Hernández
 <ul class="mh-about-links">
   <li>📫 <a href="mailto:miguelhernandez2907@gmail.com">miguelhernandez2907@gmail.com</a></li>
   <li><a href="https://github.com/Miguel000">github.com/Miguel000</a></li>
+  <li><a href="https://www.linkedin.com/in/miguelhzbz/">linkedin.com/in/miguelhzbz</a></li>
 </ul>
 </div>
 
@@ -200,7 +361,7 @@ title: Miguel Hernández
 <div class="mh-about-section">
 <h3>Bio</h3>
 <p style="color:#888;font-size:13px;line-height:1.6">
-Miguel Hernández is a Sr. Threat Research Engineer at Sysdig with over a decade of experience in security research. He has spoken at major cybersecurity conferences across Europe including HITB, HackLu, DeepSec, RootedCon, and fwd:CloudSec EU. His research spans cloud-native threats, runtime detection with Falco, supply chain security, adversarial AI, and emerging threat intelligence.
+Miguel Hern&aacute;ndez is a Sr. Threat Research Engineer at Sysdig, where he owns the out-of-the-box detection ruleset shipped to every Sysdig customer and built the detection content behind Sysdig's runtime security for AI coding agents. Over eleven years he has led named threat-research investigations including <strong>LLMjacking</strong> &mdash; the credential-resale attack class his team named &mdash; along with <strong>SCARLETEEL</strong>, <strong>EMERALDWHALE</strong>, <strong>AMBERSQUID</strong>, <strong>RUBYCARP</strong> and <strong>SSH-Snake</strong>. He has given 35 talks since 2016 at conferences including <strong>KubeCon EU</strong>, HITB, Hack.lu, DeepSec, HackInParis, RootedCon, NoConName and fwd:CloudSec EU, and taught cloud and security courses for four years. His research spans cloud-native threats, runtime detection with Falco, supply chain security and adversarial AI.
 </p>
 </div>
 
@@ -214,7 +375,7 @@ var TALKS = [
   {y:2025, conf:"DFeX 2025", loc:"", title:"From Research to Security: Real-World Threats and the Evolving Challenge of Detection"},
   {y:2025, conf:"Tardes de Ciberseguridad", loc:"", title:"Día a día de un investigador de ciberseguridad en Sysdig"},
   {y:2025, conf:"DevOps Zaragoza", loc:"Zaragoza, ES", title:"Robo de credenciales y el negocio del roleplay NSFW"},
-  {y:2024, conf:"DeepSec", loc:"Vienna, AT", title:"Navigating the Storm: Emerging Threats in AWS Cloud Security"},
+  {y:2024, conf:"DeepSec", loc:"Vienna, AT", title:"Navigating the Storm: Emerging Threats in AWS Cloud Security", slides:"https://deepsec.net/docs/Slides/2024/Navigating_the_Storm_%20Emerging_Threats_in_AWS_Cloud_Security_-_Miguel_Hernandez.pdf"},
   {y:2024, conf:"HackLu", loc:"Luxembourg", title:"Insights from Modern Botnets"},
   {y:2024, conf:"DevOps Barcelona", loc:"Barcelona, ES", title:"Fortifying DevOps: Understanding and Fighting Botnet Threats", video:"https://www.youtube.com/watch?v=xD_cNBN_SbI"},
   {y:2024, conf:"KCD Austria", loc:"Vienna, AT", title:"Detecting Unexpected Behavior and Intrusions with Falco + Atomic Red Team", workshop:true},
@@ -246,6 +407,12 @@ var TALKS = [
   {y:2016, conf:"NavajaNegra", loc:"Albacete, ES", title:"Espiando redes de microblogging"}
 ];
 
+/* TODO (Miguel): add `year:"2024"` to each entry below — the renderer already displays it.
+   Undated research reads as old. Years needed for: AI-tool payload, EMERALDWHALE, both LLMjacking
+   posts, CRYSTALRAY, Rebirth, RUBYCARP, SSH-Snake, AMBERSQUID (2023), SCARLETEEL (2023), LABRAT,
+   least-privilege, SSH-on-EC2, SECRYPT.
+   TODO: publish something on the AI coding-agent detection work — it is the most in-demand thing
+   you do and it currently has no public footprint at all. */
 var BLOG = [
   {platform:"sysdig", src:"Sysdig Blog", title:"Attacker exploits misconfigured AI tool to run AI-generated payload", url:"https://www.sysdig.com/blog/attacker-exploits-misconfigured-ai-tool-to-run-ai-generated-payload", desc:"Accidental misconfigurations where systems like Open WebUI are exposed to the internet remain a serious problem."},
   {platform:"sysdig", src:"Sysdig Blog", title:"EMERALDWHALE: 15k Cloud credentials stolen targeting exposed Git config files", url:"https://www.sysdig.com/blog/emeraldwhale", desc:"Operation targeting exposed Git configurations resulting in more than 15,000 cloud service credentials stolen."},
@@ -255,6 +422,8 @@ var BLOG = [
   {platform:"sysdig", src:"Sysdig Blog", title:"DDoS-as-a-Service: The Rebirth Botnet", url:"https://www.sysdig.com/blog/ddos-as-a-service-the-rebirth-botnet", desc:"At the core of RebirthLtd's business is its DDoS botnet, rented out to whomever is willing to pay."},
   {platform:"sysdig", src:"Sysdig Blog", title:"RUBYCARP: A Detailed Analysis of a Sophisticated Decade-Old Botnet Group", url:"https://www.sysdig.com/blog/rubycarp-romanian-botnet-group", desc:"RUBYCARP is interested in cryptomining, DDoS, and phishing payloads for financial gain."},
   {platform:"sysdig", src:"Sysdig Blog", title:"SSH-Snake: New Self-Modifying Worm Threatens Networks", url:"https://sysdig.com/blog/ssh-snake/", desc:"Analysis of SSH-Snake, a self-replicating worm using SSH credentials to spread across networks."},
+  {platform:"sysdig", src:"Sysdig Blog", title:"AWS's Hidden Threat: AMBERSQUID Cloud-Native Cryptojacking Operation", url:"https://www.sysdig.com/blog/ambersquid", desc:"Cryptojacking operation abusing uncommon AWS services — Amplify, Fargate and SageMaker — costing victims up to $10,000/day. Found by analysing over 1.7M Linux container images."},
+  {platform:"sysdig", src:"Sysdig Blog", title:"SCARLETEEL: Operation leveraging Terraform, Kubernetes, and AWS for data theft", url:"https://www.sysdig.com/blog/cloud-breach-terraform-data-theft", desc:"A containerized workload exploited to escalate into an AWS account and steal proprietary software and credentials, pivoting via a Terraform state file. Not cryptojacking — intellectual property theft."},
   {platform:"sysdig", src:"Sysdig Blog", title:"LABRAT: Stealthy Cryptojacking and Proxyjacking Campaign Targeting GitLab", url:"https://sysdig.com/blog/labrat-cryptojacking-proxyjacking-campaign/", desc:"A deep dive into a stealthy attack combining crypto- and proxyjacking targeting GitLab."},
   {platform:"sysdig", src:"Sysdig Blog", title:"Why Companies Still Struggle with Least Privilege in the Cloud", url:"https://sysdig.com/blog/identity-access-management-difficult-cloud/", desc:"Discussion on the persistent IAM challenges in cloud security."},
   {platform:"sysdig", src:"Sysdig Blog", title:"Securing SSH on EC2", url:"https://sysdig.com/blog/aws-secure-ssh-ec2-threats/", desc:"Best practices for hardening SSH access in AWS EC2 environments."},
@@ -266,11 +435,12 @@ var BLOG = [
   {platform:"media", src:"Business Insider", title:"Detección de deepfakes", url:"https://www.businessinsider.es/consejos-2-expertos-ciberseguridad-detectar-deepfakes-831319", desc:"Tips from cybersecurity experts on detecting deepfakes."},
   {platform:"media", src:"Revista SIC", title:"Análisis de la seguridad de las bases de datos orientadas a grafos", url:"https://revistasic.es/archivo/index8463.html?option=com_content&view=article&id=1825&Itemid=1589", desc:"Research paper analyzing information leakage and design flaws in graph-oriented databases."},
   {platform:"academic", src:"SECRYPT", title:"(In) Security in Graph Databases — Analysis and Data Leaks", url:"https://press.um.si/index.php/ump/catalog/book/296", desc:"Review of the most widespread graph databases, detecting security problems and improper default configurations."},
-  {platform:"academic", src:"CECC 2017", title:"Why Did I End Up Living in a Cave? Risks of IoT at home", url:"https://revistasic.es/archivo/index8463.html?option=com_content&view=article&id=1825&Itemid=1589", desc:""},
+  {platform:"academic", src:"CECC 2017", title:"Why Did I End Up Living in a Cave? Risks of IoT at home", desc:"Conference paper on the security risks of consumer IoT in the home."},
   {platform:"media", src:"El lado del mal", title:"Desenmascarar cuentas de Twitter a través de Sinfonier", url:"https://www.elladodelmal.com/2015/12/desenmascarar-cuentas-de-twitter-traves.html", desc:""}
 ];
 
 var OSS = [
+  {name:"Prempti", url:"https://github.com/falcosecurity/prempti", role:"Rules co-author", desc:"Falco-powered policy and visibility layer for AI coding agents (Falco/CNCF sandbox). Intercepts agent tool calls before execution and returns allow/deny/ask verdicts. Co-authored the default detection ruleset — persistence, MCP and skill content, sandbox-disable and agent threat detection."},
   {name:"GraFScaN", url:"https://github.com/Miguel000/GraFScaN", role:"Creator", desc:"Python tool to discover and fingerprint graph databases (Neo4j, JanusGraph) for red team reconnaissance and vulnerability assessment."},
   {name:"DeepConfusables", url:"https://github.com/jiep/deep-confusables-cli", role:"Creator", desc:"Combines ML and confusable character domains (homoglyphs) to analyze domain obfuscation attacks used in phishing and impersonation."},
   {name:"SpyScrap", url:"https://github.com/RuthGnz/SpyScrap", role:"Developer", desc:"Platform to analyze your digital fingerprint using OSINT techniques, browser fingerprinting, and facial recognition."},
@@ -324,7 +494,12 @@ var activeYear = 'all';
         if(t.workshop) html += '<span class="mh-badge mh-badge-ws">workshop</span>';
         html += '</div>';
         html += '<div class="mh-title">'+esc(t.title)+'</div>';
-        if(t.video) html += '<div class="mh-row-links"><a class="mh-link" href="'+t.video+'" target="_blank">▶ video</a></div>';
+        if(t.video || t.slides) {
+          html += '<div class="mh-row-links">';
+          if(t.video)  html += '<a class="mh-link" href="'+t.video+'" target="_blank">▶ video</a>';
+          if(t.slides) html += '<a class="mh-link" href="'+t.slides+'" target="_blank">◆ slides</a>';
+          html += '</div>';
+        }
         html += '</div>';
       });
       html += '</div>';
@@ -369,8 +544,13 @@ var activeYear = 'all';
     var html = '';
     list.forEach(function(b){
       html += '<div class="mh-blog-entry">';
-      html += '<div class="mh-blog-title"><a href="'+esc(b.url)+'" target="_blank">'+esc(b.title)+'</a>';
-      html += '<span class="mh-blog-source">'+esc(b.src)+'</span></div>';
+      html += '<div class="mh-blog-title">';
+      html += b.url
+        ? '<a href="'+esc(b.url)+'" target="_blank">'+esc(b.title)+'</a>'
+        : '<span style="color:#ddd">'+esc(b.title)+'</span>';
+      html += '<span class="mh-blog-source">'+esc(b.src)+'</span>';
+      if(b.year) html += '<span class="mh-blog-source">'+esc(b.year)+'</span>';
+      html += '</div>';
       if(b.desc) html += '<div class="mh-blog-desc">'+esc(b.desc)+'</div>';
       html += '</div>';
     });
