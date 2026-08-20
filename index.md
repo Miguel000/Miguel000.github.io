@@ -183,6 +183,7 @@ title: Miguel Hernández
   background: #262626;
 }
 .mh-tl-role { margin-bottom: 15px; }
+.mh-tl-role:last-child { margin-bottom: 0; }
 .mh-tl-head {
   display: flex; align-items: baseline; justify-content: space-between;
   gap: 12px; margin-bottom: 5px;
@@ -203,21 +204,6 @@ title: Miguel Hernández
   border: 1px solid #272727; border-radius: 2px;
   padding: 2px 7px;
 }
-.mh-tl-sub { margin: 16px 0 4px; }
-.mh-tl-subhead { font-size: 10px; color: #4f4f4f; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 7px; }
-.mh-tl-band { position: relative; height: 20px; margin-bottom: 6px; }
-.mh-tl-bandbar {
-  position: absolute; top: 4px; height: 12px;
-  border: 1px solid #3b4a2c; border-radius: 2px;
-  background: rgba(181,232,83,.06);
-  font-size: 9.5px; color: #7d8f6a;
-  white-space: nowrap; overflow: hidden;
-  padding: 0 6px; line-height: 12px;
-}
-.mh-tl-spark { position: relative; height: 42px; }
-.mh-tl-col { position: absolute; bottom: 12px; background: #46612a; border-radius: 1px 1px 0 0; }
-.mh-tl-col:hover { background: #b5e853; }
-.mh-tl-cn { position: absolute; bottom: 0; font-size: 9px; color: #4f4f4f; transform: translateX(-50%); }
 
 /* ── Profile bars: magnitude across categories, one sequential hue ── */
 .mh-prof { margin: 2px 0 0; }
@@ -847,11 +833,6 @@ var activeYear = 'all';
      tags:["NLP","OSINT","Apache Storm / Sinfonier","Neo4j"]}
   ];
 
-  var BANDS = [
-    {s:2020.67, e:2025.00, label:"Profesor · Centro San Valero — cloud computing, AWS, infosec"},
-    {s:2018.42, e:2026.63, label:"Cibercooperante · INCIBE"}
-  ];
-
   var h = '';
 
   /* axis */
@@ -875,37 +856,6 @@ var activeYear = 'all';
     h +=   '</div>';
     h += '</div>';
   }
-
-  /* teaching + community, same axis */
-  h += '<div class="mh-tl-sub"><div class="mh-tl-subhead">Teaching &amp; community</div>';
-  for(var b=0;b<BANDS.length;b++){
-    var bd = BANDS[b], bl = pct(bd.s), bw = pct(bd.e) - pct(bd.s);
-    h += '<div class="mh-tl-band"><div class="mh-tl-bandbar" style="left:'+bl.toFixed(2)+
-         '%;width:'+bw.toFixed(2)+'%">'+esc(bd.label)+'</div></div>';
-  }
-  h += '</div>';
-
-  /* talks per year, computed from TALKS so it can never drift */
-  var byYear = {}, maxN = 0;
-  for(var k=0;k<TALKS.length;k++){
-    byYear[TALKS[k].y] = (byYear[TALKS[k].y]||0) + 1;
-    if(byYear[TALKS[k].y] > maxN){ maxN = byYear[TALKS[k].y]; }
-  }
-  h += '<div class="mh-tl-sub"><div class="mh-tl-subhead">Conference talks per year &mdash; '+
-       TALKS.length+' total</div><div class="mh-tl-spark">';
-  var span = pct(2016) - pct(2015);               /* one year, as a % of the axis */
-  for(var yr=2015; yr<=2026; yr++){
-    var n = byYear[yr]||0;
-    if(n){
-      var hgt = 6 + (n/maxN)*22;
-      h += '<div class="mh-tl-col" title="'+yr+': '+n+' talk'+(n>1?'s':'')+'" style="left:'+
-           (pct(yr)+span*0.15).toFixed(2)+'%;width:'+(span*0.7).toFixed(2)+'%;height:'+hgt.toFixed(0)+'px"></div>';
-    }
-    if(yr % 2 === 1){
-      h += '<div class="mh-tl-cn" style="left:'+(pct(yr)+span*0.5).toFixed(2)+'%">'+String(yr).slice(2)+'</div>';
-    }
-  }
-  h += '</div></div>';
 
   host.innerHTML = h;
 })();
