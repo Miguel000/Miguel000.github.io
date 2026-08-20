@@ -7,26 +7,48 @@ title: Miguel Hernández
 .mh-tagline { color: #888; font-size: 14px; margin: 4px 0 0; }
 
 .mh-nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 20;
   display: flex;
-  gap: 0;
-  margin: 22px 0 0;
-  border-bottom: 1px solid #2a2a2a;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 26px 0 0;
+  padding: 7px;
+  background: #151515;
+  border: 1px dashed #b5e853;
+  border-radius: 3px;
+  box-shadow: 0 6px 14px -8px #000;
 }
 .mh-tab {
   background: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  color: #666;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: #8f8f8f;
   cursor: pointer;
   font-family: Monaco, "Bitstream Vera Sans Mono", monospace;
-  font-size: 13px;
-  padding: 7px 18px 7px 0;
-  margin-bottom: -1px;
-  margin-right: 14px;
-  transition: color .15s;
+  font-size: 12.5px;
+  letter-spacing: .6px;
+  padding: 8px 15px;
+  transition: background .15s, color .15s, border-color .15s;
 }
-.mh-tab:hover { color: #bbb; }
-.mh-tab.active { color: #9dbc98; border-bottom-color: #9dbc98; }
+.mh-tab:hover {
+  color: #e4e4e4;
+  background: rgba(181, 232, 83, .09);
+  border-color: #3d4a2a;
+}
+.mh-tab.active {
+  background: #b5e853;
+  border-color: #b5e853;
+  color: #151515;
+  font-weight: bold;
+}
+.mh-tab-n { color: #5f5f5f; margin-left: 7px; font-size: 11px; }
+.mh-tab.active .mh-tab-n { color: rgba(21, 21, 21, .62); }
+@media (max-width: 620px) {
+  .mh-tab { padding: 7px 11px; font-size: 11.5px; letter-spacing: .3px; }
+}
 
 .mh-pane { display: none; padding-top: 16px; }
 .mh-pane.active { display: block; }
@@ -239,9 +261,9 @@ supply chain security and adversarial AI.
 
 <div class="mh-nav">
   <button type="button" class="mh-tab active" data-target="mh-cv">Experience</button>
-  <button type="button" class="mh-tab" data-target="mh-talks">Talks</button>
-  <button type="button" class="mh-tab" data-target="mh-blog">Blog</button>
-  <button type="button" class="mh-tab" data-target="mh-oss">Open Source</button>
+  <button type="button" class="mh-tab" data-target="mh-talks">Talks<span class="mh-tab-n" data-count="mh-talks"></span></button>
+  <button type="button" class="mh-tab" data-target="mh-blog">Blog<span class="mh-tab-n" data-count="mh-blog"></span></button>
+  <button type="button" class="mh-tab" data-target="mh-oss">Open Source<span class="mh-tab-n" data-count="mh-oss"></span></button>
   <button type="button" class="mh-tab" data-target="mh-about">About</button>
 </div>
 
@@ -660,6 +682,14 @@ var activeYear = 'all';
   function all(sel){ return Array.prototype.slice.call(document.querySelectorAll(sel)); }
   var tabs = all('.mh-tab'), panes = all('.mh-pane'), nav = document.querySelector('.mh-nav');
 
+  /* counts filled from the data arrays, so they can never drift from the lists */
+  var COUNTS = { 'mh-talks': TALKS.length, 'mh-blog': BLOG.length, 'mh-oss': OSS.length };
+  var slots = all('.mh-tab-n');
+  for(var c=0;c<slots.length;c++){
+    var key = slots[c].getAttribute('data-count');
+    if(COUNTS[key] != null){ slots[c].textContent = COUNTS[key]; }
+  }
+
   function activate(btn){
     var target = document.getElementById(btn.getAttribute('data-target'));
     if(!target){ return; }
@@ -667,12 +697,11 @@ var activeYear = 'all';
     for(var j=0;j<panes.length;j++){ panes[j].classList.remove('active'); }
     btn.classList.add('active');
     target.classList.add('active');
-    /* panes differ a lot in height; if the nav has scrolled out of view, return to it
-       so switching never leaves the reader in blank space below a shorter pane */
-    if(nav){
-      var top = nav.getBoundingClientRect().top;
-      if(top < 0){ window.scrollTo(0, top + (window.pageYOffset||0) - 12); }
-    }
+    /* the nav is sticky so it stays visible, but switching to a shorter pane can still leave
+       the reader below its content. Scroll to the pane top only when already past it. */
+    var navH = nav ? nav.getBoundingClientRect().height : 0;
+    var paneTop = target.getBoundingClientRect().top + (window.pageYOffset||0) - navH - 10;
+    if((window.pageYOffset||0) > paneTop){ window.scrollTo(0, Math.max(0, paneTop)); }
   }
 
   for(var k=0;k<tabs.length;k++){
