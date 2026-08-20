@@ -167,6 +167,43 @@ title: Miguel Hernández
 .mh-about-links { list-style: none; padding: 0; margin: 12px 0 20px; }
 .mh-about-links li { margin: 8px 0; font-size: 13px; }
 .mh-about-links a { color: #63c0f5; }
+/* ── Profile bars: magnitude across categories, one sequential hue ── */
+.mh-prof { margin: 2px 0 0; }
+.mh-prof-row { padding: 9px 0 10px; border-top: 1px solid #1c1c1c; }
+.mh-prof-row:first-child { border-top: none; }
+.mh-prof-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+.mh-prof-name { color: #ddd; font-size: 12.5px; }
+.mh-prof-val { color: #7d7d7d; font-size: 11px; }
+.mh-prof-track {
+  position: relative;
+  height: 6px;
+  background: #1e1e1e;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.mh-prof-fill {
+  height: 100%;
+  background: #b5e853;
+  border-radius: 0 3px 3px 0;
+  transition: opacity .15s;
+}
+.mh-prof-row:hover .mh-prof-fill { opacity: .78; }
+.mh-prof-ev { color: #6b6b6b; font-size: 11px; line-height: 1.45; margin-top: 6px; }
+.mh-prof-note {
+  color: #5c5c5c;
+  font-size: 11px;
+  line-height: 1.5;
+  margin: 0 0 14px;
+  padding-left: 10px;
+  border-left: 2px solid #1e1e1e;
+}
+
 .mh-about-section { margin-bottom: 20px; }
 .mh-about-section h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #444; margin: 0 0 10px; padding-bottom: 5px; border-bottom: 1px solid #1e1e1e; }
 
@@ -402,6 +439,56 @@ agents.
 
 <!-- ══════════════ ABOUT ══════════════ -->
 <div id="mh-about" class="mh-pane">
+
+<div class="mh-about-section">
+<h3>Profile</h3>
+<p class="mh-prof-note">
+Self-assessed depth, anchored to what is on this page. The bar is the rating; the line beneath it is
+the evidence it rests on, so you can check the claim rather than take it.
+</p>
+<div class="mh-prof">
+  <div class="mh-prof-row">
+    <div class="mh-prof-head"><span class="mh-prof-name">Public speaking</span><span class="mh-prof-val">96</span></div>
+    <div class="mh-prof-track"><div class="mh-prof-fill" style="width:96%"></div></div>
+    <div class="mh-prof-ev">36 talks since 2016 &mdash; KubeCon EU, HITB, Hack.lu, DeepSec, HackInParis, RootedCon; 4 of them workshops</div>
+  </div>
+  <div class="mh-prof-row">
+    <div class="mh-prof-head"><span class="mh-prof-name">Threat research</span><span class="mh-prof-val">94</span></div>
+    <div class="mh-prof-track"><div class="mh-prof-fill" style="width:94%"></div></div>
+    <div class="mh-prof-ev">13 published investigations; named LLMjacking, SCARLETEEL, EMERALDWHALE, AMBERSQUID</div>
+  </div>
+  <div class="mh-prof-row">
+    <div class="mh-prof-head"><span class="mh-prof-name">Detection engineering</span><span class="mh-prof-val">92</span></div>
+    <div class="mh-prof-track"><div class="mh-prof-fill" style="width:92%"></div></div>
+    <div class="mh-prof-ev">Falco rule development; co-authored the default detection ruleset of Prempti (Falco/CNCF)</div>
+  </div>
+  <div class="mh-prof-row">
+    <div class="mh-prof-head"><span class="mh-prof-name">Cloud &amp; Kubernetes security</span><span class="mh-prof-val">85</span></div>
+    <div class="mh-prof-track"><div class="mh-prof-fill" style="width:85%"></div></div>
+    <div class="mh-prof-ev">AWS and Kubernetes campaign research; KubeCon EU, OWASP Kubernetes, KCD Spain and Austria</div>
+  </div>
+  <div class="mh-prof-row">
+    <div class="mh-prof-head"><span class="mh-prof-name">AI &amp; adversarial ML</span><span class="mh-prof-val">82</span></div>
+    <div class="mh-prof-track"><div class="mh-prof-fill" style="width:82%"></div></div>
+    <div class="mh-prof-ev">Detection content for AI coding agents; adversarial-ML and synthetic-content whitepapers; offensive-AI workshop</div>
+  </div>
+  <div class="mh-prof-row">
+    <div class="mh-prof-head"><span class="mh-prof-name">Teaching &amp; mentoring</span><span class="mh-prof-val">78</span></div>
+    <div class="mh-prof-track"><div class="mh-prof-fill" style="width:78%"></div></div>
+    <div class="mh-prof-ev">4 years teaching cloud computing and security; Cibercooperante (INCIBE) since 2018</div>
+  </div>
+  <div class="mh-prof-row">
+    <div class="mh-prof-head"><span class="mh-prof-name">Open source</span><span class="mh-prof-val">70</span></div>
+    <div class="mh-prof-track"><div class="mh-prof-fill" style="width:70%"></div></div>
+    <div class="mh-prof-ev">7 projects &mdash; GraFScaN, DeepConfusables, SpyScrap, Synthetic Content Toolkit, Prempti rules</div>
+  </div>
+  <div class="mh-prof-row">
+    <div class="mh-prof-head"><span class="mh-prof-name">Academic publishing</span><span class="mh-prof-val">62</span></div>
+    <div class="mh-prof-track"><div class="mh-prof-fill" style="width:62%"></div></div>
+    <div class="mh-prof-ev">M&aacute;ster en Ciberseguridad; SECRYPT, CECC, JNIC &times;4, Revista SIC; 2 whitepapers</div>
+  </div>
+</div>
+</div>
 
 <div class="mh-about-section">
 <h3>Contact</h3>
