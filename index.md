@@ -167,6 +167,58 @@ title: Miguel Hernández
 .mh-about-links { list-style: none; padding: 0; margin: 12px 0 20px; }
 .mh-about-links li { margin: 8px 0; font-size: 13px; }
 .mh-about-links a { color: #63c0f5; }
+/* ── Career timeline ── */
+.mh-tl-axis {
+  position: relative;
+  height: 16px;
+  margin: 4px 0 14px;
+  border-bottom: 1px solid #262626;
+}
+.mh-tl-tick { position: absolute; top: 0; font-size: 10px; color: #5a5a5a; transform: translateX(-50%); }
+.mh-tl-tick:after {
+  content: "";
+  position: absolute;
+  left: 50%; top: 14px;
+  width: 1px; height: 4px;
+  background: #262626;
+}
+.mh-tl-role { margin-bottom: 15px; }
+.mh-tl-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 12px; margin-bottom: 5px;
+}
+.mh-tl-title { color: #ddd; font-size: 12.5px; }
+.mh-tl-org { color: #9dbc98; }
+.mh-tl-when { color: #5f5f5f; font-size: 11px; white-space: nowrap; }
+.mh-tl-track { position: relative; height: 7px; background: #1a1a1a; border-radius: 3px; }
+.mh-tl-bar {
+  position: absolute; top: 0; height: 100%;
+  min-width: 7px; border-radius: 3px;
+  background: #6f8f3c;
+}
+.mh-tl-bar.now { background: #b5e853; }
+.mh-tl-tags { margin-top: 7px; display: flex; flex-wrap: wrap; gap: 5px; }
+.mh-tl-tag {
+  font-size: 10.5px; color: #8d8d8d;
+  border: 1px solid #272727; border-radius: 2px;
+  padding: 2px 7px;
+}
+.mh-tl-sub { margin: 16px 0 4px; }
+.mh-tl-subhead { font-size: 10px; color: #4f4f4f; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 7px; }
+.mh-tl-band { position: relative; height: 20px; margin-bottom: 6px; }
+.mh-tl-bandbar {
+  position: absolute; top: 4px; height: 12px;
+  border: 1px solid #3b4a2c; border-radius: 2px;
+  background: rgba(181,232,83,.06);
+  font-size: 9.5px; color: #7d8f6a;
+  white-space: nowrap; overflow: hidden;
+  padding: 0 6px; line-height: 12px;
+}
+.mh-tl-spark { position: relative; height: 42px; }
+.mh-tl-col { position: absolute; bottom: 12px; background: #46612a; border-radius: 1px 1px 0 0; }
+.mh-tl-col:hover { background: #b5e853; }
+.mh-tl-cn { position: absolute; bottom: 0; font-size: 9px; color: #4f4f4f; transform: translateX(-50%); }
+
 /* ── Profile bars: magnitude across categories, one sequential hue ── */
 .mh-prof { margin: 2px 0 0; }
 .mh-prof-row { padding: 9px 0 10px; border-top: 1px solid #1c1c1c; }
@@ -418,30 +470,13 @@ agents.
 </div>
 </div>
 
+<div class="mh-cv-section">
+<div class="mh-group-heading">Career timeline</div>
+<div id="mh-timeline"></div>
 </div>
 
-<!-- ══════════════ TALKS ══════════════ -->
-<div id="mh-talks" class="mh-pane">
-  <div class="mh-filters" id="mh-years"></div>
-  <div id="mh-talk-list"></div>
-</div>
-
-<!-- ══════════════ BLOG ══════════════ -->
-<div id="mh-blog" class="mh-pane">
-  <div class="mh-filters" id="mh-platforms"></div>
-  <div id="mh-blog-list"></div>
-</div>
-
-<!-- ══════════════ OPEN SOURCE ══════════════ -->
-<div id="mh-oss" class="mh-pane">
-  <div class="mh-oss-grid" id="mh-oss-grid"></div>
-</div>
-
-<!-- ══════════════ ABOUT ══════════════ -->
-<div id="mh-about" class="mh-pane">
-
-<div class="mh-about-section">
-<h3>Profile</h3>
+<div class="mh-cv-section">
+<div class="mh-group-heading">Profile</div>
 <p class="mh-prof-note">
 Self-assessed depth, anchored to what is on this page. The bar is the rating; the line beneath it is
 the evidence it rests on, so you can check the claim rather than take it.
@@ -489,6 +524,28 @@ the evidence it rests on, so you can check the claim rather than take it.
   </div>
 </div>
 </div>
+
+</div>
+
+<!-- ══════════════ TALKS ══════════════ -->
+<div id="mh-talks" class="mh-pane">
+  <div class="mh-filters" id="mh-years"></div>
+  <div id="mh-talk-list"></div>
+</div>
+
+<!-- ══════════════ BLOG ══════════════ -->
+<div id="mh-blog" class="mh-pane">
+  <div class="mh-filters" id="mh-platforms"></div>
+  <div id="mh-blog-list"></div>
+</div>
+
+<!-- ══════════════ OPEN SOURCE ══════════════ -->
+<div id="mh-oss" class="mh-pane">
+  <div class="mh-oss-grid" id="mh-oss-grid"></div>
+</div>
+
+<!-- ══════════════ ABOUT ══════════════ -->
+<div id="mh-about" class="mh-pane">
 
 <div class="mh-about-section">
 <h3>Contact</h3>
@@ -762,6 +819,95 @@ var activeYear = 'all';
     html += '</div>';
   });
   document.getElementById('mh-oss-grid').innerHTML = html;
+})();
+
+/* ─── CAREER TIMELINE ─── */
+(function(){
+  var host = document.getElementById('mh-timeline');
+  if(!host){ return; }
+
+  var AX0 = 2015.0, AX1 = 2026.75;                 /* axis span, decimal years */
+  function pct(y){ return ((y - AX0) / (AX1 - AX0)) * 100; }
+
+  var ROLES = [
+    {s:2023.33, e:2026.63, now:true,
+     title:"Sr. Threat Research Engineer", org:"Sysdig", when:"2023 — now",
+     tags:["Falco","eBPF runtime detection","Kubernetes","AWS / GCP / Azure","MITRE ATT&CK + ATLAS","AI coding agents","BigQuery","Rust"]},
+    {s:2021.67, e:2023.33,
+     title:"Security Content Engineer", org:"Sysdig", when:"2021 — 2023",
+     tags:["Kubernetes","Cloud security","Falco","Technical content"]},
+    {s:2017.42, e:2021.67,
+     title:"Security Researcher & Pentester", org:"BBVA Next Technologies", when:"2017 — 2021",
+     tags:["Adversarial ML","Synthetic content / deepfakes","Pentesting","AWS","Applied cryptography","Biometrics","UEBA"]},
+    {s:2015.92, e:2017.42,
+     title:"SecDev Technician", org:"Innovation 4 Security", when:"2015 — 2017",
+     tags:["Neo4j / graph databases","Apache Spark","ETL","Fraud analytics","Machine learning (MIT)"]},
+    {s:2015.42, e:2015.92,
+     title:"Beca Talentum", org:"ElevenPaths (Telefónica)", when:"2015",
+     tags:["NLP","OSINT","Apache Storm / Sinfonier","Neo4j"]}
+  ];
+
+  var BANDS = [
+    {s:2020.67, e:2025.00, label:"Profesor · Centro San Valero — cloud computing, AWS, infosec"},
+    {s:2018.42, e:2026.63, label:"Cibercooperante · INCIBE"}
+  ];
+
+  var h = '';
+
+  /* axis */
+  h += '<div class="mh-tl-axis">';
+  for(var y=2015; y<=2026; y+=2){
+    h += '<div class="mh-tl-tick" style="left:'+pct(y).toFixed(2)+'%">'+y+'</div>';
+  }
+  h += '</div>';
+
+  /* roles */
+  for(var i=0;i<ROLES.length;i++){
+    var r = ROLES[i], L = pct(r.s), W = pct(r.e) - pct(r.s);
+    h += '<div class="mh-tl-role">';
+    h +=   '<div class="mh-tl-head"><span class="mh-tl-title">'+esc(r.title)+
+           ' <span class="mh-tl-org">'+esc(r.org)+'</span></span>'+
+           '<span class="mh-tl-when">'+esc(r.when)+'</span></div>';
+    h +=   '<div class="mh-tl-track"><div class="mh-tl-bar'+(r.now?' now':'')+
+           '" style="left:'+L.toFixed(2)+'%;width:'+W.toFixed(2)+'%"></div></div>';
+    h +=   '<div class="mh-tl-tags">';
+    for(var t=0;t<r.tags.length;t++){ h += '<span class="mh-tl-tag">'+esc(r.tags[t])+'</span>'; }
+    h +=   '</div>';
+    h += '</div>';
+  }
+
+  /* teaching + community, same axis */
+  h += '<div class="mh-tl-sub"><div class="mh-tl-subhead">Teaching &amp; community</div>';
+  for(var b=0;b<BANDS.length;b++){
+    var bd = BANDS[b], bl = pct(bd.s), bw = pct(bd.e) - pct(bd.s);
+    h += '<div class="mh-tl-band"><div class="mh-tl-bandbar" style="left:'+bl.toFixed(2)+
+         '%;width:'+bw.toFixed(2)+'%">'+esc(bd.label)+'</div></div>';
+  }
+  h += '</div>';
+
+  /* talks per year, computed from TALKS so it can never drift */
+  var byYear = {}, maxN = 0;
+  for(var k=0;k<TALKS.length;k++){
+    byYear[TALKS[k].y] = (byYear[TALKS[k].y]||0) + 1;
+    if(byYear[TALKS[k].y] > maxN){ maxN = byYear[TALKS[k].y]; }
+  }
+  h += '<div class="mh-tl-sub"><div class="mh-tl-subhead">Conference talks per year &mdash; '+
+       TALKS.length+' total</div><div class="mh-tl-spark">';
+  var span = pct(2016) - pct(2015);               /* one year, as a % of the axis */
+  for(var yr=2015; yr<=2026; yr++){
+    var n = byYear[yr]||0;
+    if(n){
+      var hgt = 6 + (n/maxN)*22;
+      h += '<div class="mh-tl-col" title="'+yr+': '+n+' talk'+(n>1?'s':'')+'" style="left:'+
+           (pct(yr)+span*0.15).toFixed(2)+'%;width:'+(span*0.7).toFixed(2)+'%;height:'+hgt.toFixed(0)+'px"></div>';
+    }
+    if(yr % 2 === 1){
+      h += '<div class="mh-tl-cn" style="left:'+(pct(yr)+span*0.5).toFixed(2)+'%">'+String(yr).slice(2)+'</div>';
+    }
+  }
+  h += '</div></div>';
+
+  host.innerHTML = h;
 })();
 
 /* ─── TABS ─── */
