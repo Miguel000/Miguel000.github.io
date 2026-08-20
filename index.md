@@ -44,7 +44,7 @@ title: Miguel Hernández
   color: #151515;
   font-weight: bold;
 }
-.mh-tab-n { color: #5f5f5f; margin-left: 7px; font-size: 11px; }
+.mh-tab-n { color: #8a8a8a; margin-left: 7px; font-size: 11px; }
 .mh-tab.active .mh-tab-n { color: rgba(21, 21, 21, .62); }
 @media (max-width: 620px) {
   .mh-tab { padding: 7px 11px; font-size: 11.5px; letter-spacing: .3px; }
@@ -63,7 +63,7 @@ title: Miguel Hernández
 .mh-fbtn {
   background: none;
   border: 1px solid #2a2a2a;
-  color: #666;
+  color: #9a9a9a;
   cursor: pointer;
   font-family: Monaco, "Bitstream Vera Sans Mono", monospace;
   font-size: 12px;
@@ -73,18 +73,18 @@ title: Miguel Hernández
 }
 .mh-fbtn:hover { border-color: #555; color: #bbb; }
 .mh-fbtn.active { border-color: #9dbc98; color: #9dbc98; }
-.mh-fcount { color: #444; }
+.mh-fcount { color: #8a8a8a; }
 
 /* ── Talk list ── */
 .mh-year-group { margin-bottom: 26px; }
 .mh-group-heading {
-  font-size: 11px;
-  color: #444;
+  font-size: 11.5px;
+  color: #b5e853;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 1.8px;
   margin: 0 0 10px;
   padding-bottom: 5px;
-  border-bottom: 1px solid #1e1e1e;
+  border-bottom: 1px solid #2b2b2b;
 }
 .mh-talk {
   padding: 8px 0 8px 14px;
@@ -94,7 +94,7 @@ title: Miguel Hernández
 }
 .mh-talk:hover { border-left-color: #9dbc98; }
 .mh-conf { color: #ddd; font-size: 13px; font-weight: bold; }
-.mh-loc { color: #444; font-size: 12px; margin-left: 6px; font-weight: normal; }
+.mh-loc { color: #8a8a8a; font-size: 12px; margin-left: 6px; font-weight: normal; }
 .mh-title { color: #888; font-size: 13px; margin: 3px 0 4px; font-style: italic; }
 .mh-row-links { display: flex; flex-wrap: wrap; gap: 10px; }
 .mh-link { color: #63c0f5; font-size: 12px; text-decoration: none; }
@@ -125,14 +125,14 @@ title: Miguel Hernández
 .mh-blog-source {
   display: inline-block;
   font-size: 10px;
-  color: #555;
+  color: #8a8a8a;
   border: 1px solid #2a2a2a;
   border-radius: 2px;
   padding: 1px 6px;
   margin-left: 8px;
   vertical-align: middle;
 }
-.mh-blog-desc { color: #666; font-size: 12px; margin-top: 3px; }
+.mh-blog-desc { color: #8a8a8a; font-size: 12px; margin-top: 3px; }
 
 /* ── OSS list ── */
 .mh-oss-grid {
@@ -161,7 +161,7 @@ title: Miguel Hernández
   margin-left: 8px;
   vertical-align: middle;
 }
-.mh-oss-desc { color: #666; font-size: 12px; margin-top: 8px; line-height: 1.5; }
+.mh-oss-desc { color: #8a8a8a; font-size: 12px; margin-top: 8px; line-height: 1.5; }
 
 /* ── About ── */
 .mh-about-links { list-style: none; padding: 0; margin: 12px 0 20px; }
@@ -174,7 +174,7 @@ title: Miguel Hernández
   margin: 4px 0 14px;
   border-bottom: 1px solid #262626;
 }
-.mh-tl-tick { position: absolute; top: 0; font-size: 10px; color: #5a5a5a; transform: translateX(-50%); }
+.mh-tl-tick { position: absolute; top: 0; font-size: 10px; color: #8a8a8a; transform: translateX(-50%); }
 .mh-tl-tick:after {
   content: "";
   position: absolute;
@@ -190,7 +190,7 @@ title: Miguel Hernández
 }
 .mh-tl-title { color: #ddd; font-size: 12.5px; }
 .mh-tl-org { color: #9dbc98; }
-.mh-tl-when { color: #5f5f5f; font-size: 11px; white-space: nowrap; }
+.mh-tl-when { color: #8a8a8a; font-size: 11px; white-space: nowrap; }
 .mh-tl-track { position: relative; height: 7px; background: #1a1a1a; border-radius: 3px; }
 .mh-tl-bar {
   position: absolute; top: 0; height: 100%;
@@ -206,7 +206,7 @@ title: Miguel Hernández
 }
 
 .mh-about-section { margin-bottom: 20px; }
-.mh-about-section h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #444; margin: 0 0 10px; padding-bottom: 5px; border-bottom: 1px solid #1e1e1e; }
+.mh-about-section h3 { font-size: 11.5px; text-transform: uppercase; letter-spacing: 1.8px; color: #b5e853; margin: 0 0 10px; padding-bottom: 5px; border-bottom: 1px solid #1e1e1e; }
 
 .mh-bio-header {
   color: #888;
@@ -251,7 +251,7 @@ title: Miguel Hernández
   margin-bottom: 5px;
 }
 .mh-sub-k { color: #9a9a9a; }
-.mh-sub-v { color: #6b6b6b; }
+.mh-sub-v { color: #8a8a8a; }
 @media (max-width: 620px) {
   .mh-job-sublist li { grid-template-columns: 1fr; gap: 0; }
   .mh-sub-k { color: #a8a8a8; }
@@ -269,7 +269,7 @@ title: Miguel Hernández
 .mh-job-role { color: #ddd; font-size: 13px; font-weight: bold; }
 .mh-job-org { color: #9dbc98; font-size: 13px; }
 .mh-job-meta {
-  color: #555;
+  color: #8a8a8a;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
